@@ -22,7 +22,6 @@ test_function = quick_hello.blueskyHello()
 RE(test_function())
 
 run = cat[-1]
-global metadata
 metadata=run.metadata
 data=run.primary.read()
 
@@ -30,18 +29,18 @@ data=run.primary.read()
 
 @app.route("/")
 def hello_world():
-    variable = "potatoe"
+    variable = "test"
     return f'Variable = {variable}'
 
 
 @app.route("/data")
 def data():
     try:
-      global metadata
       response = jsonify(metadata)
       response.headers.add('Access-Control-Allow-Origin', '*')
       code = 200
     except:
+      response = ''
       code = 500
     return response, code
 

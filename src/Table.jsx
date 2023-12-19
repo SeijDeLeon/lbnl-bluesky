@@ -28,13 +28,13 @@ export default function BasicTable( {metadata, title} ) {
 
 
   return (
-    <fragment>
-      <h2>{title}</h2>
+    <div className="py-8">
+      <h2 className="text-left">{title}</h2>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Description</TableCell>
+              <TableCell className="font-bold">Description</TableCell>
               <TableCell align="left">Value</TableCell>
             </TableRow>
           </TableHead>
@@ -54,6 +54,6 @@ export default function BasicTable( {metadata, title} ) {
         </Table>
       </TableContainer>
 
-    </fragment>
+    </div>
   );
 }
